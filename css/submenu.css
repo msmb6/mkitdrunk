@@ -1,0 +1,43 @@
+#jb-container {
+    width: 100%;
+    margin: 0px auto;
+    padding: 5%;
+    border: 1px solid #bcbcbc;
+    position: absolute;
+    display:inline-block;
+  }
+  #jb-header {
+    margin:0 auto;
+  
+    margin-bottom: 5%;
+    
+    width: 50%;
+    text-align: center;
+  }
+  #jb-content {
+    width: 75%;
+    
+    margin-left: 25%;
+    
+    text-align: center;
+    display: block;
+    
+    
+  }
+  #jb-sidebar {
+    width: 20%;
+    
+    margin-bottom: 5%;
+    margin-right: 5%;
+    float: left;
+    
+  }
+ 
+ 
+
+div.form-group {
+  margin-left: 25%;
+  width: 50%;
+  text-align: center;
+  
+}

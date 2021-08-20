@@ -1,0 +1,48 @@
+@import "album.css";
+@import "pricing.css";
+
+
+@font-face {
+    font-family: abster;
+    src: url(../font/abster-webfont.woff) format('woff');
+}
+@font-face {
+    font-family: nanum;
+    src: url(../font/NanumGothic.woff) format('woff');
+
+}
+@font-face {
+    font-family: nanumbold;
+    src: url(../font/NanumGothicExtraBold.woff) format('woff');
+
+}
+
+
+
+div.navbar.navbar-light.shadow-sm {
+    background-color: rgb(95, 204, 255);
+}
+
+@media all and (min-width: 850px) {
+    .main {display:none;} 
+    
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  a.nav-link {
+      text-align: center;
+  }
