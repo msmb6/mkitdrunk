@@ -24,8 +24,13 @@ div.navbar.navbar-light.shadow-sm {
 }
 
 @media all and (min-width: 850px) {
-    .main {display:none;} 
+    .main {display:none !important;} 
     
+}
+
+@media all and (max-width: 575px) {
+  .main {display:none !important;} 
+  
 }
 
 .bd-placeholder-img {
@@ -46,3 +51,15 @@ div.navbar.navbar-light.shadow-sm {
   a.nav-link {
       text-align: center;
   }
+
+  .footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+  }
+  .footer p:last-child {
+    margin-bottom: 0;
+  }
+  

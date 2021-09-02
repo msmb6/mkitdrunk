@@ -18,6 +18,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -26,7 +27,7 @@ body {
   position: relative;
   box-sizing: border-box;
   height: auto;
-  padding: 10px;
+  padding: 1em;
   font-size: 16px;
 }
 .form-signin .form-control:focus {
@@ -38,7 +39,7 @@ body {
   border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
+  margin-bottom: 2em;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -46,3 +47,4 @@ body {
   .main {display:none;} 
   
 }
+

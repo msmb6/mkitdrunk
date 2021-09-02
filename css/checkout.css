@@ -1,0 +1,16 @@
+.container {
+  max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+
+
+@media all and (min-width: 850px) {
+  .main {display:none;} 
+  
+}
+
+@media all and (max-width: 575px) {
+  .main {display:none;} 
+
+}
