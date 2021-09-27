@@ -28,10 +28,6 @@ div.navbar.navbar-light.shadow-sm {
     
 }
 
-@media all and (max-width: 575px) {
-  .main {display:none !important;} 
-  
-}
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -63,3 +59,4 @@ div.navbar.navbar-light.shadow-sm {
     margin-bottom: 0;
   }
   
+ 
