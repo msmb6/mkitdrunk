@@ -1,13 +1,14 @@
-<?php
-  session_start();
+<?php 
+  session_start(); 
 ?>
+
 <!doctype html>
 <html lang="ko" class="main">
   
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Login-E</title>
+    <title>Upload-E</title>
     <link href="css/signin.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
@@ -23,19 +24,24 @@
 
   <body class="text-center">
     
+        
 <form class="form-signin">
  
   <img class="mb-4" src="images/wineglass.svg" alt="" width="30%">
   <img class="mb-4" src="images/gatsby.gif" alt="" width="100%">
   <br><br><br>
   
+  <?php
+    echo "{$_SESSION['username']}";
+  ?>
   
-  <h5> 이제 로그인하여 NFT의 세계에 흠뻑 취해보세요!</h5>
+
   <br>
   
   <button class="btn btn-lg btn-primary btn-block" type="button" onclick = "location.href ='login.html'">로그인</button>
   
 </form>
+    
 
   </body>
 </html>

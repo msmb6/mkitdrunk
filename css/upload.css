@@ -7,24 +7,33 @@ body.bg-light
 }
 
 div.upload-file {
+    margin-top: 5%;
+    margin-bottom: 10%;
     width: 30vw;
     height: 45vw;
-    
     text-align: center;
     float : left;
     border: 1px solid #868686;
     font-size: 2vw;
     overflow:scroll;
+    position:relative;
+}
+
+div.upload-file > img {
+  position:absolute;
+  max-width:100%; max-height:100%;
+  width:auto; height:auto;
+  margin:auto;
+  top:0; bottom:0; left:0; right:0;
 }
 
 div.upload-input{
     width: 60vw;
     text-align: center;
-    
-    padding-top:5%;
+    padding-top:0%;
     padding-bottom:5%;
     float : left;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10%;
     font-size: 2vw;
 }
@@ -34,7 +43,7 @@ div.upload-text{
   margin-left: 5%;
   
   position:relative;
-  margin-top: 70%;
+  margin-top: 90%;
   
 }
 
