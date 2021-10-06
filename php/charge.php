@@ -4,6 +4,7 @@
     mysqli_query($conn, "set session character_set_results=utf8;");
     mysqli_query($conn, "set session character_set_client=utf8;"); 
     session_start();
+   
     $sql  = "
     INSERT INTO charge (
         chargeaddress,

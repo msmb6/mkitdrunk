@@ -5,32 +5,29 @@
 
 <!DOCTYPE html>
 <html lang="ko" class="main">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-   
-        <title>iteminfo</title>
-        <!-- Bootstrap CSS -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>iteminfo</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
     <!-- Bootstrapc JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/style.css" rel="stylesheet" />
-        <link href="css/iteminfo2.css" rel="stylesheet" />
-        <script src="js/bootstrap-input-spinner.js"></script>
-        <script>
-          $(function(){
-              $(".purchase").click(function(){
-                  var action_url = $(this).attr("data-action");
-                  $(location).attr("href",action_url);
-              
-              });
-          });
-      </script>
-  
-    </head>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/iteminfo2.css" rel="stylesheet" />
+    <script src="js/bootstrap-input-spinner.js"></script>
+    <script>
+      $(function(){
+        $(".purchase").click(function(){
+          var action_url = $(this).attr("data-action");
+          $(location).attr("href",action_url);          
+        });
+      });
+    </script>
+  </head>
     
     <header>
       <div class="navbar navbar-light shadow-sm">
@@ -120,17 +117,17 @@
                               <input class="form-control" type="number" name="useramount" value="1" max="<?php echo $board['amount']; ?>" min="1" />
                             </div>
 
-                            <button type="submit" class="purchase btn btn-outline-dark flex-shrink-0">구매하기</button>
+                            <button type="button" class="btn btn-outline-dark flex-shrink-0" data-bs-toggle="modal" data-bs-target="#paymentModal">구매하기</button>
                             
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-      </form>
+      
         
         <!--Modal-->
-    <!-- <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+     <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document"> 
 		
 
@@ -146,30 +143,34 @@
                 
                 <p>파일명 : <a><?php echo $board['filename']; ?></a></p>
                 <p>판매자 : <a><?php echo $board['owner']; ?></a></p>
-                <p>가격 : <a><?php echo $board['price']; ?> ZAN</a></p>
-                <p>갯수 : <a></a></p>
                 
               </div> 
               <div class="modal-footer"> 
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button> 
-                  <button type="button" class="btn btn-primary" onclick = "location.href ='payment_over.html'">구매</button> 
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button> 
+                  <button type="submit" class="purchase btn btn-primary" >구매</button> 
               </div> 
           </div> 
       </div> 
-    </div> -->
+    </div> 
+  </form>
 
        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <script>
-            $("input[type='number']").inputSpinner()
-
-            
-            $('#paymentModal').on('shown.bs.modal', function () {
-              $('#myInput').trigger('focus')
-              })
-			  
-
-        </script>
-    </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>      
+  <script>
+    $("input[type='number']").inputSpinner()
+    $('#paymentModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+  </script>
+  <script>
+    function logout() {
+      console.log("hello");
+      const data = confirm("로그아웃 하시겠습니까?");
+      if (data) {
+      location.href = "php/logoutProcess.php";
+      }
+    }
+  </script>
+       
+  </body>
 </html>

@@ -1,0 +1,152 @@
+-- MySQL dump 10.13  Distrib 5.7.31, for Win64 (x86_64)
+--
+-- Host: localhost    Database: mkitdrunk
+-- ------------------------------------------------------
+-- Server version	5.7.31
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `charge`
+--
+
+DROP TABLE IF EXISTS `charge`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `charge` (
+  `idcharge` int(100) NOT NULL AUTO_INCREMENT,
+  `chargeaddress` varchar(45) DEFAULT NULL,
+  `chargeamount` varchar(45) DEFAULT NULL,
+  `username` varchar(45) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `idno` int(100) DEFAULT NULL,
+  PRIMARY KEY (`idcharge`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `charge`
+--
+
+LOCK TABLES `charge` WRITE;
+/*!40000 ALTER TABLE `charge` DISABLE KEYS */;
+INSERT INTO `charge` VALUES (7,'123','2','abc','2021-09-27 20:16:20',5),(8,'123','6','abc','2021-09-27 20:19:01',5),(9,'123','6','abc','2021-09-27 20:19:48',5),(10,'123','2','abc','2021-09-27 20:29:42',5);
+/*!40000 ALTER TABLE `charge` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `images` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) DEFAULT NULL,
+  `filename` varchar(100) NOT NULL,
+  `imgurl` varchar(512) CHARACTER SET latin1 NOT NULL,
+  `size` int(11) NOT NULL,
+  `date` datetime DEFAULT NULL,
+  `owner` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+  `ownerid` varchar(45) DEFAULT NULL,
+  `price` decimal(10,4) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `link` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+  `exposition` text,
+  `hit` int(11) DEFAULT NULL,
+  `selleradd` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `images`
+--
+
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (24,'think','thinkmarkthumbnail.PNG','http://localhost/uploads/thinkmarkthumbnail.PNG',823531,'2021-09-28 20:29:25','1541','abc',0.0007,3,'www.daum.net','아<br />\r<br>아아<br />\r<br>123<br />\r<br>11\r<br>14512',24,NULL),(23,'city','8bit.jpg','http://localhost/uploads/8bit.jpg',49957,'2021-09-28 20:28:14','abc','abc',0.0011,1,'www.google.com','아<br />\r<br/>아아<br />\r<br/>123<br />\r<br/>11',NULL,NULL),(21,'아지르','1570473359.png','http://localhost/uploads/1570473359.png',80325,'2021-09-16 16:27:45','abc','abc',0.0011,1,'','',4,NULL),(22,'범고래','rhfo.PNG','http://localhost/uploads/rhfo.PNG',591315,'2021-09-16 16:30:38','abc','abc',0.0012,7,'www.naver.com','고래임',93,NULL),(25,'알고','i14550530187.jpg','http://localhost/uploads/i14550530187.jpg',51125,'2021-09-28 21:29:41','1541','abc',0.0005,10,'www.','sadllqwel;<br />\r<br>asldk',3,'123'),(26,'11111','parrot.PNG','http://localhost/uploads/parrot.PNG',684642,'2021-09-28 21:39:34','1541','abc',0.0005,3,'11','1111',7,'123ab12xsd'),(27,'background','5777.jpg','http://localhost/uploads/5777.jpg',299750,'2021-09-30 06:29:03','1541','17',0.0036,6,'wqeqwqw','sassdㅁㅇㄴㅁㅇ',1,'123jkqsdklj'),(28,'sunglass','8bit glass.png','http://localhost/uploads/8bit glass.png',43124,'2021-10-04 06:53:06','12321','5',0.0014,6,'www.http.abcde','qwe<br />\r<br>qeqwewqe<br />\r<br>qweqweqwe<br />\r<br>ㅁㄴㅇㅁㅇㅁㅇ',1,'123ab12xsd'),(29,'testtt','81Kwm0Y-XhL._SS500_.jpg','http://localhost/uploads/81Kwm0Y-XhL._SS500_.jpg',63696,'2021-10-04 08:16:15','123','18',0.0012,3,'12313','아\r<br>아아ㅏ아\r<br>123\r<br>테스트',1,'123123123abcqwe');
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payment`
+--
+
+DROP TABLE IF EXISTS `payment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payment` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `seller` varchar(45) DEFAULT NULL,
+  `buyer` varchar(45) DEFAULT NULL,
+  `amount` varchar(45) DEFAULT NULL,
+  `price` decimal(10,4) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `selleradd` varchar(45) DEFAULT NULL,
+  `buyeradd` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payment`
+--
+
+LOCK TABLES `payment` WRITE;
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+INSERT INTO `payment` VALUES (4,'abc','abc','3',0.0015,'2021-09-28','123ab12xsd','123ab12xsd'),(5,'abc','1541','1',0.0005,'2021-09-30','123','123jkqsdklj'),(6,'abc','1541','1',0.0005,'2021-09-30','123ab12xsd','123jkqsdklj'),(7,'abc','1541','1',0.0005,'2021-09-30','123ab12xsd','123jkqsdklj'),(8,'abc','1541','1',0.0005,'2021-09-30','123ab12xsd','123jkqsdklj'),(9,'abc','1541','1',0.0005,'2021-09-30','123','123jkqsdklj'),(10,'abc','1541','1',0.0007,'2021-09-30','','123jkqsdklj'),(11,'abc','12321','1',0.0014,'2021-10-04','123ab12xsd','123123123abcqwe');
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_info`
+--
+
+DROP TABLE IF EXISTS `user_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(45) DEFAULT NULL COMMENT '사용자 명',
+  `date` datetime DEFAULT NULL COMMENT '가입 날짜',
+  `email` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+  `pw` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `wallet_info` varchar(100) CHARACTER SET latin1 DEFAULT NULL COMMENT '지갑 정보',
+  `introduction` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`email`),
+  UNIQUE KEY `user_name_UNIQUE` (`user_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='사용자 정보를 담는 테이블';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_info`
+--
+
+LOCK TABLES `user_info` WRITE;
+/*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
+INSERT INTO `user_info` VALUES (5,'abc','2021-09-15 14:11:26','123@123','$2y$10$0UClk4pnirxPMpPcIfWjvOceF833BLJJ14JdK7s4.a2XaYyMDIfIq','123ab12xsd','test'),(16,'한국어','2021-09-15 15:45:35','123342@123123','$2y$10$CjlCx9/nCeT6g.4gxmaKl.0FhIvsYSZLXaxo1wX2BbyY7eF5pDinm','123',NULL),(17,'1541','2021-09-27 19:50:30','1541@1541','$2y$10$hgL9R3fBd4radAsKvsQH0.UwrWG7NxY7mu1j2QdH4x.bG5m.dhrRG','123jkqsdklj',NULL),(18,'123','2021-10-04 07:56:11','1515@1515','$2y$10$xhSUIvck7iQ/UztsFU/3KuP3.iYu6G16GOnPAr6AAECvzdz4NgkA2','123123123abcqwe','15134123\r<br>123123');
+/*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-10-05 19:17:11
