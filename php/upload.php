@@ -56,14 +56,13 @@ if ($uploadOk == 0) {
         $price = $_POST["price"];
         $amount = $_POST["amount"];
 
-        $firstowner = $_SESSION['username'];
+        $ownerid = $_SESSION['userId'];
         $owner = $_SESSION['username'];
 
         $link = $_POST["link"];
         $exposition = $_POST["exposition"];
-        $exposition = nl2br(addslashes($exposition));
-        $exposition = str_replace("\n","<br/>", $exposition);
-
+        $exposition = str_replace("\n","<br>", $exposition);
+        $selleradd = $_SESSION["useraddress"];
 		
 		$conn = mysqli_connect("localhost", "root", "123321", "mkitdrunk");
         mysqli_query($conn, "set session character_set_connection=utf8;");
@@ -71,8 +70,8 @@ if ($uploadOk == 0) {
         mysqli_query($conn, "set session character_set_client=utf8;");
         
 		//images 테이블에 이미지정보를 저장하자.
-		$sql = "insert into images(filename, imgurl, size, date, title, price, amount, first_owner, owner, link,  exposition) 
-        values('$filename','$imgurl','$size', NOW(), '$title', '$price', '$amount' , '$firstowner', '$owner', '$link', '$exposition')";
+		$sql = "insert into images(filename, imgurl, size, date, title, price, amount, ownerid, owner, link,  exposition, selleradd) 
+        values('$filename','$imgurl','$size', NOW(), '$title', '$price', '$amount' , '$ownerid', '$owner', '$link', '$exposition', '$selleradd' )";
 
 		mysqli_query($conn,$sql);
 		mysqli_close($conn);
@@ -80,7 +79,7 @@ if ($uploadOk == 0) {
 
     <script>
         alert("등록이 완료되었습니다.");
-        location.href = "../upload_e.html";
+        location.href = "../itemlist.html";
     </script>
 
     <?php

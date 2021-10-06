@@ -115,7 +115,7 @@
                   }
                     $sql = mq("select * from images");
                     $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
-                    $list = 1; //한 페이지에 보여줄 개수
+                    $list = 3; //한 페이지에 보여줄 개수
                     $block_ct = 3; //블록당 보여줄 페이지 개수
       
                     $block_num = ceil($page/$block_ct); // 현재 페이지 블록 구하기
@@ -143,7 +143,7 @@
                             <img class="bd-placeholder-img card-img-top" src="<?php echo $board['imgurl']; ?>" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
                             <div class="card-body" >
                                 <p class="card-text">제목 : <?php echo $board['title']; ?></p>
-                                <p class="card-text">가격 : <?php echo $board['price']; ?> ETH</p>
+                                <p class="card-text">가격 : <?php echo $board['price']; ?> ZAN</p>
                                 <p class="card-text">판매자 : <?php echo $board['owner']; ?> </p>
                                 <p class="card-text">조회수 : <?php echo $board['hit']; ?> </p>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -205,7 +205,16 @@
 </div>
     </main>
 
-    
+    <script>
+      function logout() {
+          console.log("hello");
+          const data = confirm("로그아웃 하시겠습니까?");
+          if (data) {
+              location.href = "php/logoutProcess.php";
+          }
+
+      }
+    </script>
  
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
  

@@ -14,7 +14,8 @@
     <!-- Bootstrapc JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript"></script>
 
     <style>
        
@@ -33,35 +34,47 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarHeader"> 
         <ul class="navbar-nav navbar-dark"> 
+         
+
+          <?php
+          if (isset($_SESSION['userId'])) {
+              
+          ?>
           <li class="nav-item active"> 
-            <a class="nav-link" href="bookmark.html">즐겨찾기</a> 
+            <a class="nav-link" href="itemlist.html">작품목록</a> 
           </li>
           <li class="nav-item active"> 
             <a class="nav-link" href="upload.html">작품등록</a> 
           </li>
-          <li class="nav-item disabled"> 
+          <li class="nav-item active"> 
+            <a class="nav-link" href="bookmark.html">즐겨찾기</a> 
+          </li>
+          <li class="nav-item active"> 
             <a class="nav-link" href="mypage_profile.html">마이페이지</a> 
           </li>
+          <li class="nav-item disabled" onclick="logout()">
+              <a class="nav-link">로그아웃</a>
+          </li>
+          <?php
+          } else {
+          ?>
           <li class="nav-item disabled"> 
             <a class="nav-link" href="login.html">로그인</a> 
           </li>
+          <li class="nav-item disabled"> 
+            <a class="nav-link" href="checkout.html">회원가입</a> 
+          </li>
+          <?php
+          }
+          ?>
+
         </ul>
     </div>
   </div>
-
-    
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript"></script>
-
   </header>
 
   <body>
     
-    <script>
-    
-    </script>
-       
-
     <div id="jb-container">
         <div id="jb-header">
             <br>
@@ -80,9 +93,9 @@
         <li class="nav-item">
           <a class="nav-link" href="myhome.html">마이홈피</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">로그아웃</a>
-        </li>
+        <li class="nav-item disabled" onclick="logout()">
+          <a class="nav-link">로그아웃</a>
+      </li>
         
       
     </div>
@@ -93,24 +106,34 @@
       <img src="images/wineglass.svg" class="border rounded-circle" width="20%" >
       <br><br>
       
-      <form>
+      <form action="php/changeintro.php" method="POST">
         <div class="form-group">
-          <label for="exampleFormControlInput1">이름 변경</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" >
+          <label for="newname">이름 변경</label>
+          <input type="text" class="form-control" id="newname" name="newname" >
         </div>
         
         
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">자기소개</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+          <label for="newintro">자기소개</label>
+          <textarea class="form-control" id="newintro" name="newintro" rows="4"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary mb-2">변경</button>
       </form>
       
     </div>
+  </div>
 </body>
 
+<script>
+  function logout() {
+      console.log("hello");
+      const data = confirm("로그아웃 하시겠습니까?");
+      if (data) {
+          location.href = "php/logoutProcess.php";
+      }
 
+  }
+</script>
 
 </html>

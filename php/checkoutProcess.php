@@ -8,7 +8,7 @@ $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 // echo $hashedPassword;
 $sql = "
     INSERT INTO user_info
-    (id, pw, date, user_name, wallet_info)
+    (email, pw, date, user_name, wallet_info)
     VALUES('{$_POST['email']}', '{$hashedPassword}', NOW(), '{$_POST['username']}', '{$_POST['address']}')
 	";
 // echo $sql;
