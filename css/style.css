@@ -1,62 +1,93 @@
 @import "album.css";
 @import "pricing.css";
 
-
 @font-face {
-    font-family: abster;
-    src: url(../font/abster-webfont.woff) format('woff');
+  font-family: abster;
+  src: url(../font/abster-webfont.woff) format("woff");
 }
 @font-face {
-    font-family: nanum;
-    src: url(../font/NanumGothic.woff) format('woff');
-
+  font-family: nanum;
+  src: url(../font/NanumGothic.woff);
 }
 @font-face {
-    font-family: nanumbold;
-    src: url(../font/NanumGothicExtraBold.woff) format('woff');
-
+  font-family: nanumbold;
+  src: url(../font/NanumGothicExtraBold.woff) format("woff");
 }
-
-
+@font-face {
+  font-family: manteka;
+  src: url(../font/manteka.ttf) format("ttf");
+}
+@font-face {
+  font-family: igrasans;
+  src: url(../font/IgraSans.otf);
+}
+@font-face {
+  font-family: notosans;
+  src: url(../font/NotoSansKR-Medium.otf);
+}
 
 div.navbar.navbar-light.shadow-sm {
-    background-color: rgb(95, 204, 255);
+  background-color: rgb(95, 204, 255);
 }
 
 @media all and (min-width: 850px) {
-    .main {display:none !important;} 
-    
+  .main {
+    display: none !important;
+  }
 }
 
-
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-  a.nav-link {
-      text-align: center;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
+}
 
-  .footer {
-    padding: 2.5rem 0;
-    color: #999;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-top: .05rem solid #e5e5e5;
-  }
-  .footer p:last-child {
-    margin-bottom: 0;
-  }
-  
- 
+a.nav-link {
+  text-align: center;
+}
+
+.footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 0.05rem solid #e5e5e5;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+.card-img {
+  height: 20em;
+  line-height: 20em;
+  overflow: hidden;
+}
+
+.card-img > img {
+  vertical-align: middle;
+}
+
+.jumbotron {
+  font-family: "notosans";
+}
+
+header {
+  font-family: "nanum";
+}
+
+.text-center {
+  font-family: "nanum, igrasans";
+}
+
+body {
+  font-family: "nanum, igrasans";
+}

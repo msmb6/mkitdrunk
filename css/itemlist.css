@@ -1,14 +1,28 @@
+.container {
+  font-family: "notosans";
+}
+
+.container.row {
+  font-family: "nanum, igrasans";
+}
+
+.card-button {
+  display: flex;
+}
+
+.num {
+  display: flex;
+  width: 100%;
+}
+
 #page_num {
-	font-size: 1em;
-	margin-left: 33%;
-	margin-top: 10%; 
+  font-size: 1em;
+  margin: 0 auto;
 }
 #page_num ul li {
-	float: left;
-	margin-left: 10px; 
-	text-align: center;
+  margin-left: 10px;
 }
 .fo_re {
-	font-weight: bold;
-	color:rgb(29, 0, 194);
+  font-weight: bold;
+  color: rgb(29, 0, 194);
 }

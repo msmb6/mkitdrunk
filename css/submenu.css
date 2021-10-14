@@ -1,43 +1,31 @@
 #jb-container {
-    width: 100%;
-    margin: 0px auto;
-    padding: 5%;
-    
-    position: absolute;
-    display:inline-block;
-  }
-  #jb-header {
-    margin:0 auto;
-  
-    margin-bottom: 5%;
-    
-    width: 50%;
-    text-align: center;
-  }
-  #jb-content {
-    width: 75%;
-    
-    margin-left: 25%;
-    
-    text-align: center;
-    display: block;
-    
-    
-  }
-  #jb-sidebar {
-    width: 20%;
-    
-    margin-bottom: 5%;
-    margin-right: 5%;
-    float: left;
-    
-  }
- 
- 
-
-div.form-group {
-  margin-left: 25%;
+  width: 100%;
+  margin: 0px auto;
+  position: absolute;
+  display: inline-block;
+}
+#jb-header {
+  margin: 0 auto;
+  margin-bottom: 5%;
   width: 50%;
   text-align: center;
-  
+}
+#jb-content {
+  width: 70%;
+  margin-left: 30%;
+  margin-top: 10%;
+  text-align: center;
+  display: block;
+}
+#jb-sidebar {
+  width: 30%;
+  float: left;
+  font-size: 0.8rem;
+  margin-top: 0%;
+}
+
+div.form-group {
+  margin-left: 10%;
+  width: 80%;
+  text-align: center;
 }

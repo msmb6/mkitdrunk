@@ -28,7 +28,11 @@
     )";
 
     $usql = "
-    UPDATE images SET owner = '{$_SESSION['username']}' WHERE id = '{$bno}'
+    UPDATE images SET 
+        owner='{$_SESSION['username']}',
+        ownerid='{$_SESSION['userId']}',
+        selleradd='{$_SESSION['useraddress']}'
+    WHERE id = '{$bno}'
     ";
 
     $result = mysqli_query($db, $msql);

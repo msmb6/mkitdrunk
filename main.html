@@ -1,41 +1,33 @@
 <?php
+include  $_SERVER['DOCUMENT_ROOT']."/mkitdrunk/php/db.php";
 session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="ko" class="main">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-    <title>MainPage</title>
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
-    <!-- Bootstrapc JS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
-
-
-    <style>
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+  <title>MainPage</title>
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
+  <!-- Bootstrapc JS-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>   
 </head>
 
 <header>
   <div class="navbar navbar-light shadow-sm">
     <div class="container d-flex justify-content-between">
       <a href="main.html" class="navbar-brand d-flex align-items-center">
-        <img src="images/wineglass_w.png" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Drunk</strong>
+        <img src="images/logo.png" style="width: 7em; position: absolute; left: 0%" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarHeader"> 
+      <div class="collapse navbar-collapse" id="navbarHeader" style="font-family: nanum;"> 
         <ul class="navbar-nav navbar-dark"> 
-         
-
           <?php
           if (isset($_SESSION['userId'])) {
               
@@ -45,9 +37,6 @@ session_start();
           </li>
           <li class="nav-item active"> 
             <a class="nav-link" href="upload.html">작품등록</a> 
-          </li>
-          <li class="nav-item active"> 
-            <a class="nav-link" href="bookmark.html">즐겨찾기</a> 
           </li>
           <li class="nav-item active"> 
             <a class="nav-link" href="mypage_profile.html">마이페이지</a> 
@@ -67,79 +56,74 @@ session_start();
           <?php
           }
           ?>
-
         </ul>
     </div>
   </div>
-  </header>
+</header>
 
 <body>
-    <div class="text-center">
-        <img src="images/logo.PNG" class="rounded mx-auto d-block" width="50%">
+  
+  <div>
+    <form class="d-flex p-3 bd-highlight" style="left:0;" method="get" action="php/search.php" >
+      <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" name="search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>   
+  </div>
+
+ 
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-5" style="font-family: abster;">MAKE IT DRUNK </h1>
+      <hr>
+      <p>블록체인을 이용한 NFT 거래 시스템 구현</p>
+      <p>블록체인 활용 부분: 거래 및 토큰 발행 / 독자적인 코인 사용</p>
+      <p>웹을 이용한 거래 서비스 제공 / MySQL을 사용하여 사용자와 작품에 대한 정보 저장</p>
     </div>
-    <div class="container-fluid" >
-        <form class="d-flex p-2 bd-highlight" >
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        
-      </div>
+  </div>
 
-      <div class="text-center">
-        <img src="images/drunk.jpg" class="rounded" alt="광고" width="70%" style="margin-bottom: 10%;">
-      </div> 
+  <div>
+    <br><br>
+  </div>
 
-      <div class="text-center" >
-        <p>추천 NFT</p>
-        
-        <div class="card-group">
+  <div class="text-center" >
+    <h2 style="font-family: igrasans, nanumbold;"><b>추천 NFT</b></h2>
+    <br>
+    <div class="card-group">
+      <?php
+        $sql = mq("select * from images ORDER BY hit DESC limit 0,3"); 
+        while($item = $sql->fetch_array()){
+          ?> 
           <div class="card">
-            <img src="images/wineglass.svg" class="card-img-top" alt="...">
+            <div class="card-img" >
+              <a href="./iteminfo.html?id=<?=$item['id']?>">
+                <img src="<?php echo $item['imgurl']; ?>" class="card-img-top" style="width: 100%; height: auto; overflow: hidden;">
+              </a>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">제목</h5>
-              <p class="card-text">작성자</p>
+              <h3 class="card-title"><b><?php echo $item['title']; ?></b></h3>
+              <p class="card-text">update by <b><?php echo $item['owner']; ?></b></p>
             </div>
           </div>
-          <div class="card">
-            <img src="images/wineglass.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">제목</h5>
-              <p class="card-text">작성자</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/wineglass.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">제목</h5>
-              <p class="card-text">작성자</p>
-            </div>
-          </div>
-          
-          </div>
-        </div>
-        <br>
-      </div>
+      <?php } ?> 
+    </div>      
+  </div>
+  <br>
 
-      <script>
-        function logout() {
-            console.log("hello");
-            const data = confirm("로그아웃 하시겠습니까?");
-            if (data) {
-                location.href = "php/logoutProcess.php";
-            }
-
+  <script>
+    function logout() {
+      console.log("hello");
+      const data = confirm("로그아웃 하시겠습니까?");
+        if (data) {
+          location.href = "php/logoutProcess.php";
+          }
         }
-      </script>
+  </script>
 
 </body>
 
-<footer class="footer">
-  <p>대충 밑에 아무말</p>
-
-
-  <p>
-    <a href="#">Back to top</a>
-  </p>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">&copy; 2021-2021 MKITDRUNK</p>
 </footer>
 
 </html>

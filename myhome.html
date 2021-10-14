@@ -30,16 +30,13 @@
     <div class="navbar navbar-light shadow-sm">
       <div class="container d-flex justify-content-between">
         <a href="main.html" class="navbar-brand d-flex align-items-center">
-          <img src="images/wineglass_w.png" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <strong>Drunk</strong>
+          <img src="images/logo.png" style="width: 7em; position: absolute; left: 0%" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarHeader"> 
+        <div class="collapse navbar-collapse" id="navbarHeader" style="font-family: nanum;"> 
           <ul class="navbar-nav navbar-dark"> 
-           
-  
             <?php
             if (isset($_SESSION['userId'])) {
                 
@@ -49,9 +46,6 @@
             </li>
             <li class="nav-item active"> 
               <a class="nav-link" href="upload.html">작품등록</a> 
-            </li>
-            <li class="nav-item active"> 
-              <a class="nav-link" href="bookmark.html">즐겨찾기</a> 
             </li>
             <li class="nav-item active"> 
               <a class="nav-link" href="mypage_profile.html">마이페이지</a> 
@@ -71,31 +65,32 @@
             <?php
             }
             ?>
-  
           </ul>
       </div>
     </div>
-    </header>
-
+  </header>
   <body>
     
-
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <img src="images/wineglass.svg" class="border rounded-circle" width="20%" >
-    <br>
-    <hr>
-    
-    <p class="lead font-weight-normal"><?php echo $_SESSION['username'] ?></p>
-    <p class="lead font-weight-normal"><?php echo $_SESSION['userintro'] ?></p>
-    <br>
+<div class="card mb-3">
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-4">
+      <img src="images/profile.png" class="border rounded-circle" width="20%" >
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="font-family: nanum, igrasans;"><b><?php echo $_SESSION['username'] ?></b> 님의 마이페이지 입니다.</h5>
+        <hr>
+        
+        <p class="card-text" style="font-family: nanum, igrasans;"><?php echo $_SESSION['userintro'] ?></p>
+        <p class="card-text" style="font-family: nanum, igrasans;"><small class="text-muted">address: <?php echo $_SESSION['useraddress'] ?></small></p>
+      </div>
+    </div>
   </div>
- 
 </div>
 
 <div>
   <?php 
-  $sql2 = mq("select * from images where owner='{$_SESSION['username']}'");  
+  $sql2 = mq("select * from images where ownerid='{$_SESSION['userId']}'");  
     while($board = $sql2->fetch_array()){
     $title=$board["title"]; 
     if(strlen($title)>30)
@@ -105,20 +100,23 @@
   ?>
   
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    
-    <img class="bd-placeholder-img card-img-top" src="<?php echo $board['imgurl']; ?>" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
-    <div class="my-3 p-3">
-      <hr>
-      <h2 class="display-5"><?php echo $board['title']; ?></h2>
-      <hr>
-      <p class="lead"><?php echo $board['exposition']; ?></p>
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <img class="bd-placeholder-img card-img-top" src="<?php echo $board['imgurl']; ?>" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
+      <div class="card" >
+        <div class="card-body">
+          <h4 class="card-title"style="font-family: nanum, igrasans;"><b><?php echo $board['title']; ?></b></h4>
+          <h6 class="card-subtitle mb-2 text-muted"style="font-family: nanum, igrasans;"><small> owned by <b><?php echo $board['owner']; ?></b></small></h6>
+          <hr>
+          <label><small><strong>Description</strong></small></label>
+          <br><br>
+          <p class="card-text"style="font-family: nanum, igrasans;"><?php echo $board['exposition']; ?></p>
+          <br>
+          <a href="iteminfo.html?id=<?=$board['id']?>" class="card-link">자세히 보기</a>
+        </div>
+      </div>
     </div>
-    
   </div>
-  
-</div>
 
 <?php } ?>    
 </div>
@@ -147,10 +145,7 @@
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 
-  <footer class="footer">
-    <p>페이지의 끝입니다</p>
-    <p>
-      <a href="#">Back to top</a>
-    </p>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2021-2021 MKITDRUNK</p>
   </footer>
 </html>

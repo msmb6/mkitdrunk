@@ -16,26 +16,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript"></script>
-
-    <style>
-       
-    </style>
 </head>
 
 <header>
   <div class="navbar navbar-light shadow-sm">
     <div class="container d-flex justify-content-between">
       <a href="main.html" class="navbar-brand d-flex align-items-center">
-        <img src="images/wineglass_w.png" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Drunk</strong>
+        <img src="images/logo.png" style="width: 7em; position: absolute; left: 0%" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarHeader"> 
+      <div class="collapse navbar-collapse" id="navbarHeader" style="font-family: nanum;"> 
         <ul class="navbar-nav navbar-dark"> 
-         
-
           <?php
           if (isset($_SESSION['userId'])) {
               
@@ -45,9 +38,6 @@
           </li>
           <li class="nav-item active"> 
             <a class="nav-link" href="upload.html">작품등록</a> 
-          </li>
-          <li class="nav-item active"> 
-            <a class="nav-link" href="bookmark.html">즐겨찾기</a> 
           </li>
           <li class="nav-item active"> 
             <a class="nav-link" href="mypage_profile.html">마이페이지</a> 
@@ -67,11 +57,10 @@
           <?php
           }
           ?>
-
         </ul>
     </div>
   </div>
-  </header>
+</header>
 
   <body>
     
@@ -103,18 +92,18 @@
 
     <div id="jb-content" >
       
-      <img src="images/wineglass.svg" class="border rounded-circle" width="20%" >
+      <img src="images/profile.png" class="border rounded-circle" width="20%" >
       <br><br>
       
       <form action="php/changeintro.php" method="POST">
         <div class="form-group">
-          <label for="newname">이름 변경</label>
+          <label for="newname"><b style="font-family: nanum;">이름 변경</b></label>
           <input type="text" class="form-control" id="newname" name="newname" >
         </div>
         
         
         <div class="form-group">
-          <label for="newintro">자기소개</label>
+          <label for="newintro"><b style="font-family: nanum;">자기 소개</b></label>
           <textarea class="form-control" id="newintro" name="newintro" rows="4"></textarea>
         </div>
 
@@ -124,6 +113,8 @@
     </div>
   </div>
 </body>
+
+
 
 <script>
   function logout() {
