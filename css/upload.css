@@ -1,74 +1,78 @@
-body.bg-light
-{
-  padding-left : 5%;
-  padding-right : 5%;
-  padding-top : 5%;
+div.bg-light {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
   padding-bottom: 5%;
+
+  font-family: "nanum", igrasans;
 }
 
 div.upload-file {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width: 30vw;
-    height: 50vw;
-    text-align: center;
-    float : left;
-    border: 1px solid #868686;
-    font-size: 2vw;
-    overflow:scroll;
-    position:relative;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 30vw;
+  height: 50vw;
+  text-align: center;
+  float: left;
+  border: 1px solid #868686;
+  font-size: 2vw;
+  overflow: scroll;
+  position: relative;
 }
 
 div.upload-file > img {
-  position:absolute;
-  max-width:100%; max-height:100%;
-  width:auto; height:auto;
-  margin:auto;
-  top:0; bottom:0; left:0; right:0;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-div.upload-input{
-    width: 60vw;
-    text-align: center;
-    padding-top:0%;
-    padding-bottom:0%;
-    float : left;
-    margin-top: 5%;
-    margin-bottom: 10%;
-    font-size: 2vw;
+div.upload-input {
+  width: 55vw;
+  text-align: center;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  float: left;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  font-size: 2vw;
 }
 
-div.upload-text{
+div.upload-text {
   width: 90%;
   margin-left: 5%;
-  
-  position:relative;
+
+  position: relative;
   margin-top: 90%;
-  
 }
 
 div.upload-button {
-  float : right;
-  padding-right: 5%;
+  padding-left: 75%;
+
   margin-top: 5%;
-  
 }
 
-.dellink{
-    display: none;
-  }
+.dellink {
+  display: none;
+}
 
 input#fileSelector {
-    display: none;
+  display: none;
 }
 
-.input-file-button{
-    padding: 1em 3em;
-    background-color:#0275d8;
-    
-    color: white;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-  }
+.input-file-button {
+  padding: 1em 3em;
+  background-color: #0275d8;
 
+  color: white;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
